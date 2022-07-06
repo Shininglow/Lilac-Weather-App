@@ -1,0 +1,157 @@
+#container {
+    display: block;
+    margin-top: 3%;
+    width: 700px;
+    background: linear-gradient(
+      178.6deg,
+      rgb(243, 248, 251) 3.3%,
+      rgb(252, 253, 255) 109.6%
+    );
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  .toprow .bottomrow {
+    padding-top: 15px;
+  }
+  
+  h1,
+  h2 {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fbc2eb;
+    line-height: 1.2;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  h2 {
+    font-weight: 300;
+    color: #6769b9;
+  }
+  
+  p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 0.7;
+    color: #a6c1ee;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  .fa-cloud-moon {
+    font-size: 100px;
+    background: -webkit-linear-gradient(#fbc2eb, #a6c1ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .temperature {
+    font-weight: 300;
+    color: #6769b9;
+    font-size: 40px;
+  }
+  
+  .card-text {
+    font-size: 10px;
+  }
+  
+  .card-body {
+    padding: 2px;
+  }
+  
+  .card-text {
+    font-size: 16px;
+    color: #6769b9;
+    text-align: center;
+    line-height: normal;
+    margin-bottom: 5px;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  .card-title {
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #6769b9;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border: 0px none;
+    border-radius: 0.25rem;
+  }
+  
+  .fa-droplet {
+    font-size: 26px;
+    background: -webkit-linear-gradient(#fbc2eb, #a6c1ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .search {
+    width: 85%;
+    height: 100%;
+    background: -webkit-linear-gradient(#f5cdea, #a6c1ee);
+    border: 0px none;
+    border-radius: 10px;
+    color: #fff;
+    width: 100%;
+    min-height: 40px;
+    padding-top: 15;
+  }
+  
+  button {
+    width: 85%;
+    height: 100%;
+    background: -webkit-linear-gradient(#f5cdea, #a6c1ee);
+    border: 0px none;
+    border-radius: 10px;
+    color: #fff;
+    width: 100%;
+    min-height: 40px;
+    padding-top: 15;
+    margin-top: 15px;
+  }
+  
+  .form-control {
+    border: 1px solid #6769b9;
+    border-radius: 10px;
+    box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  }
+  
+  input {
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  input:hover,
+  button:hover {
+    box-shadow: rgba(37, 39, 89, 0.148) 0px 8px 8px 0;
+    transition: all 200ms ease;
+  }
+  
+  a {
+    color: #6769b9;
+    font-size: 26px;
+  }
+  
+  form {
+    display: inline;
+  }
+  
+  #cityinput {
+    font-weight: 600;
+  }
+  
+  .tempfield {
+    margin-top: 15px;
+  }
+  

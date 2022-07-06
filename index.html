@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="src/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e71cbb327a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container border-0 rounded" id="container">
+      <div class="row toprow">
+        <div class="col-7">
+          <h1>Weather in</h1>
+          <h2 id="cityinput"></h2>
+        </div>
+
+        <div class="col-5 d-flex justify-content-center align-text-middle">
+          <i class="fa-solid fa-cloud-moon"></i>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-7">
+          <h2 id="dates">June, 6</h2>
+          <h2 id="timer">16:00</h2>
+        </div>
+
+        <div class="col-5 d-flex justify-content-center tempfield">
+          <p class="temperature">
+            <span id="temperature"></span><a href="#" id="celsius">°C</a>
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-2 d-flex justify-content-center align-text-middle">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><i class="fa-solid fa-droplet"></i></p>
+              <h5 class="card-title"><span id="humid"></span>%</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2 d-flex justify-content-center align-text-middle">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="firstday">June 7</p>
+              <h5 class="card-title">+23°</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 d-flex justify-content-center align-text-middle">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="secondday">June 8</p>
+              <h5 class="card-title">+26°</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 d-flex justify-content-center align-text-middle">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="thirdday">June 9</p>
+              <h5 class="card-title">+20°</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 d-flex justify-content-center align-text-middle">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="fourthday">June 10</p>
+              <h5 class="card-title">+23°</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 d-flex justify-content-center align-text-middle">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="fifthday">June 11</p>
+              <h5 class="card-title">+21°</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <form>
+        <div class="row">
+          <div class="col-12">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="City"
+              id="cityfield"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <input
+              type="submit"
+              class="search"
+              id="searchbutton"
+              value="Search"
+            />
+          </div>
+          <div class="col-6">
+            <button class="search">Current</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="src/javascript.js"></script>
+  </body>
+</html>
