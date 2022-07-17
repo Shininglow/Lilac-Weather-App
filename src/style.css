@@ -4,7 +4,7 @@
     width: 700px;
     background: linear-gradient(
       178.6deg,
-      rgb(243, 248, 251) 3.3%,
+      rgb(255, 255, 255) 3.3%,
       rgb(252, 253, 255) 109.6%
     );
     padding-top: 15px;
@@ -37,14 +37,7 @@
     font-family: "Source Sans Pro", sans-serif;
   }
   
-  .fa-cloud-moon {
-    font-size: 100px;
-    background: -webkit-linear-gradient(#fbc2eb, #a6c1ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .temperature {
+  .temperature, .hum {
     font-weight: 300;
     color: #6769b9;
     font-size: 40px;
@@ -89,12 +82,6 @@
     border-radius: 0.25rem;
   }
   
-  .fa-droplet {
-    font-size: 26px;
-    background: -webkit-linear-gradient(#fbc2eb, #a6c1ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
   
   .search {
     width: 85%;
@@ -138,7 +125,7 @@
     transition: all 200ms ease;
   }
   
-  a {
+  a, i, .perc {
     color: #6769b9;
     font-size: 26px;
   }
@@ -150,8 +137,3 @@
   #cityinput {
     font-weight: 600;
   }
-  
-  .tempfield {
-    margin-top: 15px;
-  }
-  

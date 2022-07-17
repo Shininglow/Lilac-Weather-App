@@ -24,26 +24,6 @@ function showDate() {
 
   let timer = document.querySelector("#timer");
   timer.innerHTML = `${hours}:${minutes}`;
-
-  let firstDay = document.querySelector("#firstday");
-  let firstDate = dayNum + 1;
-  firstDay.innerHTML = `${month}, ${firstDate}`;
-
-  let secondDay = document.querySelector("#secondday");
-  let secondDate = firstDate + 1;
-  secondDay.innerHTML = `${month}, ${secondDate}`;
-
-  let thirdDay = document.querySelector("#thirdday");
-  let thirdDate = secondDate + 1;
-  thirdDay.innerHTML = `${month}, ${thirdDate}`;
-
-  let fourthDay = document.querySelector("#fourthday");
-  let fourthDate = thirdDate + 1;
-  fourthDay.innerHTML = `${month}, ${fourthDate}`;
-
-  let fifthDay = document.querySelector("#fifthday");
-  let fifthDate = fourthDate + 1;
-  fifthDay.innerHTML = `${month}, ${fifthDate}`;
 }
 
 showDate();
@@ -76,6 +56,8 @@ function searchHandle(event) {
 }
 
 function showWeather(response) {
+  let windElement = document.querySelector("#windspeed");
+  let descriptionElement = document.querySelector("#description");
   let iconElement = document.querySelector("#icon");
   document.querySelector("#cityinput").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -89,7 +71,13 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
+
+
 
 let submit = document.querySelector("#searchbutton");
 submit.addEventListener("click", searchHandle);
@@ -97,4 +85,27 @@ submit.addEventListener("click", searchHandle);
 let currentLocationButton = document.querySelector("button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+//
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = ` + 66 `;
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+function showCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = ` + 19 `;
+}
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsius);
+
+//
+
 searchCity("Sydney");
+
