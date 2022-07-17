@@ -28,6 +28,13 @@
     font-weight: 300;
     color: #6769b9;
   }
+
+  h3 {
+    font-size: 26px;
+    font-weight: 300;
+    color: #6769b9;
+    font-style:italic;
+  }
   
   p {
     font-size: 16px;
@@ -40,7 +47,7 @@
   .temperature, .hum {
     font-weight: 300;
     color: #6769b9;
-    font-size: 40px;
+    font-size: 26px;
   }
   
   .card-text {
@@ -137,3 +144,9 @@
   #cityinput {
     font-weight: 600;
   }
+
+ .prjlink {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 0.7;
+ }
