@@ -30,17 +30,28 @@ showDate();
 
 //
 
-function populateforecast() {
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function populateforecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#additional-forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-days.forEach(function(day) {
+forecast.forEach(function(forecastDay, index) {
+  if (index <6) {
   forecastHTML = forecastHTML + `
     <div class="col-2">
       <div>
-        <div class="additional-days">${day}</div>
+        <div class="additional-days">${formatDay(forecastDay.dt)}</div>
           <img
-              src="http://openweathermap.org/img/wn/04d@2x.png"
+              src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
               alt="Clear"
               width="70"
               id="icon"
@@ -48,9 +59,10 @@ days.forEach(function(day) {
             />
         </div>
       <div class="additional-temperature">
-            <span class="temp-max">29</span>° <span class="temp-min">15</span>°
+            <span class="temp-max">${Math.round(forecastDay.temp.max)}</span>° <span class="temp-min">${Math.round(forecastDay.temp.min)}</span>°
       </div>
     </div>`
+  }
 })
   
   forecastHTML = forecastHTML + `</div>`;
@@ -84,6 +96,14 @@ function searchHandle(event) {
   searchCity(city);
 }
 
+function getForecast (coordinates) {
+  console.log(coordinates);
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let secondApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(secondApiUrl).then (populateforecast);
+}
+
 function showWeather(response) {
   let windElement = document.querySelector("#windspeed");
   let descriptionElement = document.querySelector("#description");
@@ -104,9 +124,9 @@ function showWeather(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
   descriptionElement.innerHTML = response.data.weather[0].description;
+
+  getForecast(response.data.coord);
 }
-
-
 
 let submit = document.querySelector("#searchbutton");
 submit.addEventListener("click", searchHandle);
@@ -135,6 +155,4 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
 
 //
-populateforecast();
 searchCity("Sydney");
-
