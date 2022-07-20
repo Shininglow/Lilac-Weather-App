@@ -30,6 +30,35 @@ showDate();
 
 //
 
+function populateforecast() {
+  let forecastElement = document.querySelector("#additional-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+days.forEach(function(day) {
+  forecastHTML = forecastHTML + `
+    <div class="col-2">
+      <div>
+        <div class="additional-days">${day}</div>
+          <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="Clear"
+              width="70"
+              id="icon"
+              class="float-left"
+            />
+        </div>
+      <div class="additional-temperature">
+            <span class="temp-max">29</span>° <span class="temp-min">15</span>°
+      </div>
+    </div>`
+})
+  
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//
+
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -106,6 +135,6 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
 
 //
-
+populateforecast();
 searchCity("Sydney");
 
