@@ -136,23 +136,5 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 //
 
-function showFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = ` + 66 `;
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", showFahrenheit);
-
-function showCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = ` + 19 `;
-}
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", showCelsius);
-
 //
-searchCity("Sydney");
+searchCity("Tokyo");

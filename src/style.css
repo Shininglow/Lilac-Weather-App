@@ -38,19 +38,19 @@
   
   h2 {
     font-weight: 300;
-    color: #6769b9;
+    color: #000;
   }
 
   h3 {
     font-size: 16px;
     font-weight: 300;
-    color: #6769b9;
+    color: #000;
     font-style:italic;
   }
 
   .temperature, .hum {
     font-size: 16px;
-    color: #6769b9;
+    color: #000;
     
 
   }
@@ -108,7 +108,7 @@
   }
   
   a, i, .perc {
-    color: #6769b9;
+    color: #000;
     font-size: 16px;
   }
   
